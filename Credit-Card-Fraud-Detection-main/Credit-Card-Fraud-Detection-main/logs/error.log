@@ -1,0 +1,4 @@
+[2026-05-24 08:21:09] ERROR [ml_pipeline:data_loader.py:42] - Data loading aborted: File not found.
+[2026-05-24 08:21:09] ERROR [ml_pipeline:data_loader.py:77] - Critical error occurred during dataset loading: Dataset is missing mandatory structural columns: ['Time', 'Amount']
+[2026-05-24 08:30:16] ERROR [ml_pipeline:data_loader.py:133] - Critical error occurred during dataset loading: Dataset is missing mandatory structural columns: ['Time', 'Amount']
+[2026-05-24 08:33:27] ERROR [ml_pipeline:data_loader.py:133] - Critical error occurred during dataset loading: Dataset is missing mandatory structural columns: ['Time', 'Amount']

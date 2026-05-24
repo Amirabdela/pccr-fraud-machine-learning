@@ -1,0 +1,35 @@
+version: "3.8"
+
+services:
+  api:
+    build: .
+    container_name: fraud_detection_api
+    command: uvicorn app.main_api:app --host 0.0.0.0 --port 8000
+    ports:
+      - "8000:8000"
+    environment:
+      - ENV=production
+      - MODEL_PATH=models/random_forest_champion/random_forest_champion.joblib
+    volumes:
+      - ./models:/app/models
+      - ./logs:/app/logs
+      - ./reports:/app/reports
+      - ./visuals:/app/visuals
+    restart: always
+
+  dashboard:
+    build: .
+    container_name: fraud_detection_dashboard
+    command: streamlit run app.dashboard.py --server.port 8501 --server.address 0.0.0.0
+    ports:
+      - "8501:8501"
+    environment:
+      - MODEL_PATH=models/random_forest_champion/random_forest_champion.joblib
+    volumes:
+      - ./models:/app/models
+      - ./logs:/app/logs
+      - ./reports:/app/reports
+      - ./visuals:/app/visuals
+    depends_on:
+      - api
+    restart: always

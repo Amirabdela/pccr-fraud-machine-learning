@@ -1,0 +1,177 @@
+[2026-05-23 22:59:58] INFO - TestRunner - =======================================================================
+[2026-05-23 22:59:58] INFO - TestRunner - STARTING PIPELINE VERIFICATION SUITE
+[2026-05-23 22:59:58] INFO - TestRunner - =======================================================================
+[2026-05-23 22:59:58] INFO - TestRunner - TEST: Loading & Schema Validation...
+[2026-05-23 22:59:58] INFO - DataLoader - Initiating dataset ingestion from target path: data/raw\temp_mock_creditcard.csv
+[2026-05-23 22:59:58] INFO - DataLoader - Dataset loaded successfully. Shape: 200 rows, 31 columns.
+[2026-05-23 22:59:58] INFO - DataLoader - Target class distribution: Legitimate (0) = 180, Fraudulent (1) = 20 (10.0000%)
+[2026-05-23 22:59:58] INFO - DataLoader - Dataset verified: No missing values found.
+[2026-05-23 22:59:58] INFO - TestRunner - -> Schema Validation Test Passed.
+[2026-05-23 22:59:58] INFO - TestRunner - TEST: Data Splitting & Feature Scaling Preprocessors...
+[2026-05-23 22:59:58] INFO - Preprocessing - Splitting dataset with test_size=0.2, stratifying target 'Class'
+[2026-05-23 22:59:58] CRITICAL - TestRunner - CRITICAL FAULT: Pipeline verification crashed. Error: Cannot specify both 'axis' and 'index'/'columns'
+[2026-05-23 23:16:12] INFO - TestRunner - =======================================================================
+[2026-05-23 23:16:12] INFO - TestRunner - STARTING PIPELINE VERIFICATION SUITE
+[2026-05-23 23:16:12] INFO - TestRunner - =======================================================================
+[2026-05-23 23:16:12] INFO - TestRunner - TEST: Loading & Schema Validation...
+[2026-05-23 23:16:12] INFO - DataLoader - Initiating dataset ingestion from target path: data/raw\temp_mock_creditcard.csv
+[2026-05-23 23:16:12] INFO - DataLoader - Dataset loaded successfully. Shape: 200 rows, 31 columns.
+[2026-05-23 23:16:12] INFO - DataLoader - Target class distribution: Legitimate (0) = 180, Fraudulent (1) = 20 (10.0000%)
+[2026-05-23 23:16:12] INFO - DataLoader - Dataset verified: No missing values found.
+[2026-05-23 23:16:12] INFO - TestRunner - -> Schema Validation Test Passed.
+[2026-05-23 23:16:12] INFO - TestRunner - TEST: Data Splitting & Feature Scaling Preprocessors...
+[2026-05-23 23:16:12] INFO - Preprocessing - Splitting features and targets (stratifying by 'Class')
+[2026-05-23 23:16:12] INFO - Preprocessing - Splitting complete. Train shape: (800, 30), Test shape: (200, 30)
+[2026-05-23 23:16:12] INFO - Preprocessing - Creating preprocessor transformer targeting columns: ['Time', 'Amount']
+[2026-05-23 23:16:12] INFO - TestRunner - -> Data Split & Feature Scaling Preprocessor Tests Passed.
+[2026-05-23 23:16:12] INFO - TestRunner - TEST: Safe Leakage-Free SMOTE Pipeline Execution...
+[2026-05-23 23:16:12] INFO - Preprocessing - Splitting features and targets (stratifying by 'Class')
+[2026-05-23 23:16:12] INFO - Preprocessing - Splitting complete. Train shape: (400, 30), Test shape: (100, 30)
+[2026-05-23 23:16:12] INFO - Preprocessing - Creating preprocessor transformer targeting columns: ['Time', 'Amount']
+[2026-05-23 23:16:12] CRITICAL - TestRunner - CRITICAL FAULT: Pipeline verification crashed. Error: Expected n_neighbors <= n_samples_fit, but n_neighbors = 6, n_samples_fit = 4, n_samples = 4
+[2026-05-23 23:16:40] INFO - TestRunner - =======================================================================
+[2026-05-23 23:16:40] INFO - TestRunner - STARTING PIPELINE VERIFICATION SUITE
+[2026-05-23 23:16:40] INFO - TestRunner - =======================================================================
+[2026-05-23 23:16:40] INFO - TestRunner - TEST: Loading & Schema Validation...
+[2026-05-23 23:16:40] INFO - DataLoader - Initiating dataset ingestion from target path: data/raw\temp_mock_creditcard.csv
+[2026-05-23 23:16:40] INFO - DataLoader - Dataset loaded successfully. Shape: 200 rows, 31 columns.
+[2026-05-23 23:16:40] INFO - DataLoader - Target class distribution: Legitimate (0) = 180, Fraudulent (1) = 20 (10.0000%)
+[2026-05-23 23:16:40] INFO - DataLoader - Dataset verified: No missing values found.
+[2026-05-23 23:16:40] INFO - TestRunner - -> Schema Validation Test Passed.
+[2026-05-23 23:16:40] INFO - TestRunner - TEST: Data Splitting & Feature Scaling Preprocessors...
+[2026-05-23 23:16:40] INFO - Preprocessing - Splitting features and targets (stratifying by 'Class')
+[2026-05-23 23:16:40] INFO - Preprocessing - Splitting complete. Train shape: (800, 30), Test shape: (200, 30)
+[2026-05-23 23:16:40] INFO - Preprocessing - Creating preprocessor transformer targeting columns: ['Time', 'Amount']
+[2026-05-23 23:16:40] INFO - TestRunner - -> Data Split & Feature Scaling Preprocessor Tests Passed.
+[2026-05-23 23:16:40] INFO - TestRunner - TEST: Safe Leakage-Free SMOTE Pipeline Execution...
+[2026-05-23 23:16:40] INFO - Preprocessing - Splitting features and targets (stratifying by 'Class')
+[2026-05-23 23:16:40] INFO - Preprocessing - Splitting complete. Train shape: (400, 30), Test shape: (100, 30)
+[2026-05-23 23:16:40] INFO - Preprocessing - Creating preprocessor transformer targeting columns: ['Time', 'Amount']
+[2026-05-23 23:16:43] INFO - TestRunner - -> Leakage-free SMOTE Pipeline verification Passed.
+[2026-05-23 23:16:43] INFO - TestRunner - TEST: Model Serialization (save/load)...
+[2026-05-23 23:16:43] INFO - ML_Pipeline - Created structural directory: models
+[2026-05-23 23:16:43] INFO - ML_Pipeline - Created structural directory: visuals
+[2026-05-23 23:16:43] INFO - ML_Pipeline - Serialized model successfully to: models/test_model.joblib
+[2026-05-23 23:16:43] INFO - ML_Pipeline - Model loaded successfully from: models/test_model.joblib
+[2026-05-23 23:16:43] INFO - TestRunner - -> Model Serialization test Passed.
+[2026-05-23 23:16:43] INFO - TestRunner - =======================================================================
+[2026-05-23 23:16:43] INFO - TestRunner - SUCCESS: ALL PIPELINE VERIFICATIONS PASSED SUCCESSFULLY.
+[2026-05-23 23:16:43] INFO - TestRunner - =======================================================================
+[2026-05-23 23:17:36] INFO - TestRunner - =======================================================================
+[2026-05-23 23:17:36] INFO - TestRunner - STARTING PIPELINE VERIFICATION SUITE
+[2026-05-23 23:17:36] INFO - TestRunner - =======================================================================
+[2026-05-23 23:17:36] INFO - TestRunner - TEST: Loading & Schema Validation...
+[2026-05-23 23:17:36] INFO - DataLoader - Initiating dataset ingestion from target path: data/raw\temp_mock_creditcard.csv
+[2026-05-23 23:17:36] INFO - DataLoader - Dataset loaded successfully. Shape: 200 rows, 31 columns.
+[2026-05-23 23:17:36] INFO - DataLoader - Target class distribution: Legitimate (0) = 180, Fraudulent (1) = 20 (10.0000%)
+[2026-05-23 23:17:36] INFO - DataLoader - Dataset verified: No missing values found.
+[2026-05-23 23:17:36] INFO - TestRunner - -> Schema Validation Test Passed.
+[2026-05-23 23:17:36] INFO - TestRunner - TEST: Data Splitting & Feature Scaling Preprocessors...
+[2026-05-23 23:17:36] INFO - Preprocessing - Splitting features and targets (stratifying by 'Class')
+[2026-05-23 23:17:36] INFO - Preprocessing - Splitting complete. Train shape: (800, 30), Test shape: (200, 30)
+[2026-05-23 23:17:36] INFO - Preprocessing - Creating preprocessor transformer targeting columns: ['Time', 'Amount']
+[2026-05-23 23:17:36] INFO - TestRunner - -> Data Split & Feature Scaling Preprocessor Tests Passed.
+[2026-05-23 23:17:36] INFO - TestRunner - TEST: Safe Leakage-Free SMOTE Pipeline Execution...
+[2026-05-23 23:17:36] INFO - Preprocessing - Splitting features and targets (stratifying by 'Class')
+[2026-05-23 23:17:36] INFO - Preprocessing - Splitting complete. Train shape: (400, 30), Test shape: (100, 30)
+[2026-05-23 23:17:36] INFO - Preprocessing - Creating preprocessor transformer targeting columns: ['Time', 'Amount']
+[2026-05-23 23:17:37] INFO - TestRunner - -> Leakage-free SMOTE Pipeline verification Passed.
+[2026-05-23 23:17:37] INFO - TestRunner - TEST: Model Serialization (save/load)...
+[2026-05-23 23:17:37] INFO - ML_Pipeline - Serialized model successfully to: models/test_model.joblib
+[2026-05-23 23:17:37] INFO - ML_Pipeline - Model loaded successfully from: models/test_model.joblib
+[2026-05-23 23:17:37] INFO - TestRunner - -> Model Serialization test Passed.
+[2026-05-23 23:17:37] INFO - TestRunner - =======================================================================
+[2026-05-23 23:17:37] INFO - TestRunner - SUCCESS: ALL PIPELINE VERIFICATIONS PASSED SUCCESSFULLY.
+[2026-05-23 23:17:37] INFO - TestRunner - =======================================================================
+[2026-05-23 23:17:52] INFO - Orchestrator - =======================================================================
+[2026-05-23 23:17:52] INFO - Orchestrator - STARTING END-TO-END CREDIT CARD FRAUD DETECTION PIPELINE
+[2026-05-23 23:17:52] INFO - Orchestrator - =======================================================================
+[2026-05-23 23:17:52] INFO - DataLoader - Initiating dataset ingestion from target path: D:/creditcard_data.csv
+[2026-05-23 23:17:52] ERROR - DataLoader - Dataset not found at target location: 'D:/creditcard_data.csv'
+=======================================================================
+REPRODUCIBILITY INSTRUCTIONS:
+1. Download the 'creditcardfraud' dataset from Kaggle:
+   URL: https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud
+2. Extract the ZIP archive.
+3. Place the CSV file at:
+   'data/raw/creditcard.csv' (or pass your path using --data-path)
+=======================================================================
+[2026-05-23 23:17:52] ERROR - Orchestrator - Ingestion failed. Pipeline terminated.
+[2026-05-23 23:19:27] INFO - TestRunner - =======================================================================
+[2026-05-23 23:19:27] INFO - TestRunner - STARTING PIPELINE VERIFICATION SUITE
+[2026-05-23 23:19:27] INFO - TestRunner - =======================================================================
+[2026-05-23 23:19:27] INFO - TestRunner - TEST: Loading & Schema Validation...
+[2026-05-23 23:19:27] INFO - DataLoader - Initiating dataset ingestion from target path: data/raw\temp_mock_creditcard.csv
+[2026-05-23 23:19:27] INFO - DataLoader - Dataset loaded successfully. Shape: 200 rows, 31 columns.
+[2026-05-23 23:19:27] INFO - DataLoader - Target class distribution: Legitimate (0) = 180, Fraudulent (1) = 20 (10.0000%)
+[2026-05-23 23:19:27] INFO - DataLoader - Dataset verified: No missing values found.
+[2026-05-23 23:19:27] INFO - TestRunner - -> Schema Validation Test Passed.
+[2026-05-23 23:19:27] INFO - TestRunner - TEST: Data Splitting & Feature Scaling Preprocessors...
+[2026-05-23 23:19:27] INFO - Preprocessing - Splitting features and targets (stratifying by 'Class')
+[2026-05-23 23:19:27] INFO - Preprocessing - Splitting complete. Train shape: (800, 30), Test shape: (200, 30)
+[2026-05-23 23:19:27] INFO - Preprocessing - Creating preprocessor transformer targeting columns: ['Time', 'Amount']
+[2026-05-23 23:19:27] INFO - TestRunner - -> Data Split & Feature Scaling Preprocessor Tests Passed.
+[2026-05-23 23:19:27] INFO - TestRunner - TEST: Safe Leakage-Free SMOTE Pipeline Execution...
+[2026-05-23 23:19:27] INFO - Preprocessing - Splitting features and targets (stratifying by 'Class')
+[2026-05-23 23:19:27] INFO - Preprocessing - Splitting complete. Train shape: (400, 30), Test shape: (100, 30)
+[2026-05-23 23:19:27] INFO - Preprocessing - Creating preprocessor transformer targeting columns: ['Time', 'Amount']
+[2026-05-23 23:19:28] INFO - TestRunner - -> Leakage-free SMOTE Pipeline verification Passed.
+[2026-05-23 23:19:28] INFO - TestRunner - TEST: Model Serialization (save/load)...
+[2026-05-23 23:19:28] INFO - ML_Pipeline - Serialized model successfully to: models/test_model.joblib
+[2026-05-23 23:19:28] INFO - ML_Pipeline - Model loaded successfully from: models/test_model.joblib
+[2026-05-23 23:19:28] INFO - TestRunner - -> Model Serialization test Passed.
+[2026-05-23 23:19:28] INFO - TestRunner - =======================================================================
+[2026-05-23 23:19:28] INFO - TestRunner - SUCCESS: ALL PIPELINE VERIFICATIONS PASSED SUCCESSFULLY.
+[2026-05-23 23:19:28] INFO - TestRunner - =======================================================================
+[2026-05-23 23:21:42] INFO - TestRunner - =======================================================================
+[2026-05-23 23:21:42] INFO - TestRunner - STARTING PIPELINE VERIFICATION SUITE
+[2026-05-23 23:21:42] INFO - TestRunner - =======================================================================
+[2026-05-23 23:21:42] INFO - TestRunner - TEST: Loading & Schema Validation...
+[2026-05-23 23:21:42] INFO - DataLoader - Initiating dataset ingestion from target path: data/raw\temp_mock_creditcard.csv
+[2026-05-23 23:21:42] INFO - DataLoader - Dataset loaded successfully. Shape: 200 rows, 31 columns.
+[2026-05-23 23:21:42] INFO - DataLoader - Target class distribution: Legitimate (0) = 180, Fraudulent (1) = 20 (10.0000%)
+[2026-05-23 23:21:42] INFO - DataLoader - Dataset verified: No missing values found.
+[2026-05-23 23:21:42] INFO - TestRunner - -> Schema Validation Test Passed.
+[2026-05-23 23:21:42] INFO - TestRunner - TEST: Data Splitting & Feature Scaling Preprocessors...
+[2026-05-23 23:21:42] INFO - Preprocessing - Splitting features and targets (stratifying by 'Class')
+[2026-05-23 23:21:42] INFO - Preprocessing - Splitting complete. Train shape: (800, 30), Test shape: (200, 30)
+[2026-05-23 23:21:42] INFO - Preprocessing - Creating preprocessor transformer targeting columns: ['Time', 'Amount']
+[2026-05-23 23:21:42] INFO - TestRunner - -> Data Split & Feature Scaling Preprocessor Tests Passed.
+[2026-05-23 23:21:42] INFO - TestRunner - TEST: Safe Leakage-Free SMOTE Pipeline Execution...
+[2026-05-23 23:21:42] INFO - Preprocessing - Splitting features and targets (stratifying by 'Class')
+[2026-05-23 23:21:42] INFO - Preprocessing - Splitting complete. Train shape: (400, 30), Test shape: (100, 30)
+[2026-05-23 23:21:42] INFO - Preprocessing - Creating preprocessor transformer targeting columns: ['Time', 'Amount']
+[2026-05-23 23:21:43] INFO - TestRunner - -> Leakage-free SMOTE Pipeline verification Passed.
+[2026-05-23 23:21:43] INFO - TestRunner - TEST: Model Serialization (save/load)...
+[2026-05-23 23:21:43] INFO - ML_Pipeline - Serialized model successfully to: models/test_model.joblib
+[2026-05-23 23:21:43] INFO - ML_Pipeline - Model loaded successfully from: models/test_model.joblib
+[2026-05-23 23:21:43] INFO - TestRunner - -> Model Serialization test Passed.
+[2026-05-23 23:21:43] INFO - TestRunner - =======================================================================
+[2026-05-23 23:21:43] INFO - TestRunner - SUCCESS: ALL PIPELINE VERIFICATIONS PASSED SUCCESSFULLY.
+[2026-05-23 23:21:43] INFO - TestRunner - =======================================================================
+[2026-05-23 23:24:01] INFO - TestRunner - =======================================================================
+[2026-05-23 23:24:01] INFO - TestRunner - STARTING PIPELINE VERIFICATION SUITE
+[2026-05-23 23:24:01] INFO - TestRunner - =======================================================================
+[2026-05-23 23:24:01] INFO - TestRunner - TEST: Loading & Schema Validation...
+[2026-05-23 23:24:01] INFO - DataLoader - Initiating dataset ingestion from target path: data/raw\temp_mock_creditcard.csv
+[2026-05-23 23:24:01] INFO - DataLoader - Dataset loaded successfully. Shape: 200 rows, 31 columns.
+[2026-05-23 23:24:01] INFO - DataLoader - Target class distribution: Legitimate (0) = 180, Fraudulent (1) = 20 (10.0000%)
+[2026-05-23 23:24:01] INFO - DataLoader - Dataset verified: No missing values found.
+[2026-05-23 23:24:01] INFO - TestRunner - -> Schema Validation Test Passed.
+[2026-05-23 23:24:01] INFO - TestRunner - TEST: Data Splitting & Feature Scaling Preprocessors...
+[2026-05-23 23:24:01] INFO - Preprocessing - Splitting features and targets (stratifying by 'Class')
+[2026-05-23 23:24:01] INFO - Preprocessing - Splitting complete. Train shape: (800, 30), Test shape: (200, 30)
+[2026-05-23 23:24:01] INFO - Preprocessing - Creating preprocessor transformer targeting columns: ['Time', 'Amount']
+[2026-05-23 23:24:01] INFO - TestRunner - -> Data Split & Feature Scaling Preprocessor Tests Passed.
+[2026-05-23 23:24:01] INFO - TestRunner - TEST: Safe Leakage-Free SMOTE Pipeline Execution...
+[2026-05-23 23:24:01] INFO - Preprocessing - Splitting features and targets (stratifying by 'Class')
+[2026-05-23 23:24:01] INFO - Preprocessing - Splitting complete. Train shape: (400, 30), Test shape: (100, 30)
+[2026-05-23 23:24:01] INFO - Preprocessing - Creating preprocessor transformer targeting columns: ['Time', 'Amount']
+[2026-05-23 23:24:02] INFO - TestRunner - -> Leakage-free SMOTE Pipeline verification Passed.
+[2026-05-23 23:24:02] INFO - TestRunner - TEST: Model Serialization (save/load)...
+[2026-05-23 23:24:02] INFO - ML_Pipeline - Serialized model successfully to: models/test_model.joblib
+[2026-05-23 23:24:02] INFO - ML_Pipeline - Model loaded successfully from: models/test_model.joblib
+[2026-05-23 23:24:02] INFO - TestRunner - -> Model Serialization test Passed.
+[2026-05-23 23:24:02] INFO - TestRunner - =======================================================================
+[2026-05-23 23:24:02] INFO - TestRunner - SUCCESS: ALL PIPELINE VERIFICATIONS PASSED SUCCESSFULLY.
+[2026-05-23 23:24:02] INFO - TestRunner - =======================================================================

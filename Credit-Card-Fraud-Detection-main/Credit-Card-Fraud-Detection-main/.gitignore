@@ -1,0 +1,44 @@
+# Environments & Packages
+.venv/
+env/
+venv/
+ENV/
+bin/
+lib/
+include/
+requirements_lock.txt
+
+# Python runtime
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Local Data Storage
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+
+# Serialized ML Models
+models/*.joblib
+models/*.pkl
+models/*.pkl.gz
+
+# Evaluation Visuals and Reports
+visuals/*.png
+visuals/*.jpg
+reports/*.json
+reports/*.txt
+
+# Jupyter Notebook configuration & backups
+.ipynb_checkpoints/
+*-checkpoint.ipynb
+*copy.ipynb
+
+# IDE configs
+.vscode/
+.idea/
+.gemini/

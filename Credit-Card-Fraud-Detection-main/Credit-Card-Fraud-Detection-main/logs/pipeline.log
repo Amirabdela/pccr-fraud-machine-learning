@@ -1,0 +1,216 @@
+[2026-05-24 08:21:08] INFO [ml_pipeline:data_loader.py:28] - Initiating dataset ingestion from target path: C:\Users\alhel\AppData\Local\Temp\pytest-of-alhel\pytest-0\test_data_loader_valid0\creditcard.csv
+[2026-05-24 08:21:09] INFO [ml_pipeline:data_loader.py:48] - Dataset loaded successfully. Shape: 200 rows, 31 columns.
+[2026-05-24 08:21:09] INFO [ml_pipeline:data_loader.py:62] - Target class distribution: Legitimate (0) = 180, Fraudulent (1) = 20 (10.0000%)
+[2026-05-24 08:21:09] INFO [ml_pipeline:data_loader.py:72] - Dataset verified: No missing values detected.
+[2026-05-24 08:21:09] INFO [ml_pipeline:data_loader.py:28] - Initiating dataset ingestion from target path: non_existent_file.csv
+[2026-05-24 08:21:09] ERROR [ml_pipeline:data_loader.py:42] - Data loading aborted: File not found.
+[2026-05-24 08:21:09] INFO [ml_pipeline:data_loader.py:28] - Initiating dataset ingestion from target path: C:\Users\alhel\AppData\Local\Temp\pytest-of-alhel\pytest-0\test_data_loader_malformed_sch0\bad_schema.csv
+[2026-05-24 08:21:09] INFO [ml_pipeline:data_loader.py:48] - Dataset loaded successfully. Shape: 2 rows, 2 columns.
+[2026-05-24 08:21:09] ERROR [ml_pipeline:data_loader.py:77] - Critical error occurred during dataset loading: Dataset is missing mandatory structural columns: ['Time', 'Amount']
+[2026-05-24 08:21:09] INFO [ml_pipeline:preprocessing.py:135] - Executing train/test split (test_size=0.2, stratify=True)
+[2026-05-24 08:21:09] INFO [ml_pipeline:preprocessing.py:150] - Split completed. Train shape: (400, 30), Test shape: (100, 30)
+[2026-05-24 08:21:09] INFO [ml_pipeline:preprocessing.py:167] - Configuring preprocessor pipeline targeting scaling columns: ['Time', 'Amount']
+[2026-05-24 08:21:18] INFO [ml_pipeline:utils.py:105] - Successfully serialized model pipeline to: C:\Users\alhel\AppData\Local\Temp\pytest-of-alhel\pytest-0\test_model_serialization0\model.joblib
+[2026-05-24 08:21:18] INFO [ml_pipeline:utils.py:118] - Successfully saved model metadata companion to: C:\Users\alhel\AppData\Local\Temp\pytest-of-alhel\pytest-0\test_model_serialization0\model_metadata.json
+[2026-05-24 08:21:18] INFO [ml_pipeline:utils.py:144] - Loaded serialized model pipeline successfully from: C:\Users\alhel\AppData\Local\Temp\pytest-of-alhel\pytest-0\test_model_serialization0\model.joblib
+[2026-05-24 08:21:18] INFO [ml_pipeline:preprocessing.py:135] - Executing train/test split (test_size=0.2, stratify=True)
+[2026-05-24 08:21:18] INFO [ml_pipeline:preprocessing.py:150] - Split completed. Train shape: (800, 30), Test shape: (200, 30)
+[2026-05-24 08:21:18] INFO [ml_pipeline:preprocessing.py:84] - Checking outliers for columns: ['Amount'] at 0.999 threshold.
+[2026-05-24 08:21:18] INFO [ml_pipeline:preprocessing.py:95] - Capping 1 extreme outlier(s) in 'Amount' at 0.999 percentile value: 11.00
+[2026-05-24 08:21:18] INFO [ml_pipeline:preprocessing.py:167] - Configuring preprocessor pipeline targeting scaling columns: ['Time', 'Amount']
+[2026-05-24 08:30:12] INFO [ml_pipeline:data_loader.py:77] - Initiating dataset ingestion from target path: C:\Users\alhel\AppData\Local\Temp\pytest-of-alhel\pytest-1\test_data_loader_valid0\creditcard.csv
+[2026-05-24 08:30:12] INFO [ml_pipeline:data_loader.py:100] - Dataset loaded successfully. Shape: 200 rows, 31 columns.
+[2026-05-24 08:30:12] INFO [ml_pipeline:data_loader.py:118] - Target class distribution: Legitimate (0) = 180, Fraudulent (1) = 20 (10.0000%)
+[2026-05-24 08:30:12] INFO [ml_pipeline:data_loader.py:128] - Dataset verified: No missing values detected.
+[2026-05-24 08:30:12] INFO [ml_pipeline:data_loader.py:77] - Initiating dataset ingestion from target path: non_existent_file.csv
+[2026-05-24 08:30:12] WARNING [ml_pipeline:data_loader.py:80] - Dataset not found at target location: 'non_existent_file.csv'
+[2026-05-24 08:30:12] INFO [ml_pipeline:data_loader.py:81] - GENERATING HIGH-FIDELITY SYNTHETIC DATASET FOR SEAMLESS DEMO RUN...
+[2026-05-24 08:30:14] INFO [ml_pipeline:data_loader.py:92] - Synthetic dataset of 15,000 samples successfully saved to: non_existent_file.csv
+[2026-05-24 08:30:14] INFO [ml_pipeline:data_loader.py:100] - Dataset loaded successfully. Shape: 15000 rows, 31 columns.
+[2026-05-24 08:30:14] INFO [ml_pipeline:data_loader.py:118] - Target class distribution: Legitimate (0) = 14975, Fraudulent (1) = 25 (0.1667%)
+[2026-05-24 08:30:14] INFO [ml_pipeline:data_loader.py:128] - Dataset verified: No missing values detected.
+[2026-05-24 08:30:16] INFO [ml_pipeline:data_loader.py:77] - Initiating dataset ingestion from target path: C:\Users\alhel\AppData\Local\Temp\pytest-of-alhel\pytest-1\test_data_loader_malformed_sch0\bad_schema.csv
+[2026-05-24 08:30:16] INFO [ml_pipeline:data_loader.py:100] - Dataset loaded successfully. Shape: 2 rows, 2 columns.
+[2026-05-24 08:30:16] ERROR [ml_pipeline:data_loader.py:133] - Critical error occurred during dataset loading: Dataset is missing mandatory structural columns: ['Time', 'Amount']
+[2026-05-24 08:30:16] INFO [ml_pipeline:preprocessing.py:135] - Executing train/test split (test_size=0.2, stratify=True)
+[2026-05-24 08:30:16] INFO [ml_pipeline:preprocessing.py:150] - Split completed. Train shape: (400, 30), Test shape: (100, 30)
+[2026-05-24 08:30:16] INFO [ml_pipeline:preprocessing.py:167] - Configuring preprocessor pipeline targeting scaling columns: ['Time', 'Amount']
+[2026-05-24 08:30:23] INFO [ml_pipeline:utils.py:105] - Successfully serialized model pipeline to: C:\Users\alhel\AppData\Local\Temp\pytest-of-alhel\pytest-1\test_model_serialization0\model.joblib
+[2026-05-24 08:30:23] INFO [ml_pipeline:utils.py:118] - Successfully saved model metadata companion to: C:\Users\alhel\AppData\Local\Temp\pytest-of-alhel\pytest-1\test_model_serialization0\model_metadata.json
+[2026-05-24 08:30:23] INFO [ml_pipeline:utils.py:144] - Loaded serialized model pipeline successfully from: C:\Users\alhel\AppData\Local\Temp\pytest-of-alhel\pytest-1\test_model_serialization0\model.joblib
+[2026-05-24 08:30:23] INFO [ml_pipeline:preprocessing.py:135] - Executing train/test split (test_size=0.2, stratify=True)
+[2026-05-24 08:30:23] INFO [ml_pipeline:preprocessing.py:150] - Split completed. Train shape: (800, 30), Test shape: (200, 30)
+[2026-05-24 08:30:23] INFO [ml_pipeline:preprocessing.py:84] - Checking outliers for columns: ['Amount'] at 0.999 threshold.
+[2026-05-24 08:30:23] INFO [ml_pipeline:preprocessing.py:95] - Capping 1 extreme outlier(s) in 'Amount' at 0.999 percentile value: 11.00
+[2026-05-24 08:30:23] INFO [ml_pipeline:preprocessing.py:167] - Configuring preprocessor pipeline targeting scaling columns: ['Time', 'Amount']
+[2026-05-24 08:33:24] INFO [ml_pipeline:data_loader.py:77] - Initiating dataset ingestion from target path: C:\Users\alhel\AppData\Local\Temp\pytest-of-alhel\pytest-2\test_data_loader_valid0\creditcard.csv
+[2026-05-24 08:33:24] INFO [ml_pipeline:data_loader.py:100] - Dataset loaded successfully. Shape: 200 rows, 31 columns.
+[2026-05-24 08:33:24] INFO [ml_pipeline:data_loader.py:118] - Target class distribution: Legitimate (0) = 180, Fraudulent (1) = 20 (10.0000%)
+[2026-05-24 08:33:24] INFO [ml_pipeline:data_loader.py:128] - Dataset verified: No missing values detected.
+[2026-05-24 08:33:24] INFO [ml_pipeline:data_loader.py:77] - Initiating dataset ingestion from target path: C:\Users\alhel\AppData\Local\Temp\pytest-of-alhel\pytest-2\test_data_loader_missing_file0\synthetic_creditcard.csv
+[2026-05-24 08:33:24] WARNING [ml_pipeline:data_loader.py:80] - Dataset not found at target location: 'C:\Users\alhel\AppData\Local\Temp\pytest-of-alhel\pytest-2\test_data_loader_missing_file0\synthetic_creditcard.csv'
+[2026-05-24 08:33:24] INFO [ml_pipeline:data_loader.py:81] - GENERATING HIGH-FIDELITY SYNTHETIC DATASET FOR SEAMLESS DEMO RUN...
+[2026-05-24 08:33:27] INFO [ml_pipeline:data_loader.py:92] - Synthetic dataset of 15,000 samples successfully saved to: C:\Users\alhel\AppData\Local\Temp\pytest-of-alhel\pytest-2\test_data_loader_missing_file0\synthetic_creditcard.csv
+[2026-05-24 08:33:27] INFO [ml_pipeline:data_loader.py:100] - Dataset loaded successfully. Shape: 15000 rows, 31 columns.
+[2026-05-24 08:33:27] INFO [ml_pipeline:data_loader.py:118] - Target class distribution: Legitimate (0) = 14975, Fraudulent (1) = 25 (0.1667%)
+[2026-05-24 08:33:27] INFO [ml_pipeline:data_loader.py:128] - Dataset verified: No missing values detected.
+[2026-05-24 08:33:27] INFO [ml_pipeline:data_loader.py:77] - Initiating dataset ingestion from target path: C:\Users\alhel\AppData\Local\Temp\pytest-of-alhel\pytest-2\test_data_loader_malformed_sch0\bad_schema.csv
+[2026-05-24 08:33:27] INFO [ml_pipeline:data_loader.py:100] - Dataset loaded successfully. Shape: 2 rows, 2 columns.
+[2026-05-24 08:33:27] ERROR [ml_pipeline:data_loader.py:133] - Critical error occurred during dataset loading: Dataset is missing mandatory structural columns: ['Time', 'Amount']
+[2026-05-24 08:33:27] INFO [ml_pipeline:preprocessing.py:135] - Executing train/test split (test_size=0.2, stratify=True)
+[2026-05-24 08:33:27] INFO [ml_pipeline:preprocessing.py:150] - Split completed. Train shape: (400, 30), Test shape: (100, 30)
+[2026-05-24 08:33:27] INFO [ml_pipeline:preprocessing.py:167] - Configuring preprocessor pipeline targeting scaling columns: ['Time', 'Amount']
+[2026-05-24 08:33:35] INFO [ml_pipeline:utils.py:105] - Successfully serialized model pipeline to: C:\Users\alhel\AppData\Local\Temp\pytest-of-alhel\pytest-2\test_model_serialization0\model.joblib
+[2026-05-24 08:33:35] INFO [ml_pipeline:utils.py:118] - Successfully saved model metadata companion to: C:\Users\alhel\AppData\Local\Temp\pytest-of-alhel\pytest-2\test_model_serialization0\model_metadata.json
+[2026-05-24 08:33:35] INFO [ml_pipeline:utils.py:144] - Loaded serialized model pipeline successfully from: C:\Users\alhel\AppData\Local\Temp\pytest-of-alhel\pytest-2\test_model_serialization0\model.joblib
+[2026-05-24 08:33:35] INFO [ml_pipeline:preprocessing.py:135] - Executing train/test split (test_size=0.2, stratify=True)
+[2026-05-24 08:33:35] INFO [ml_pipeline:preprocessing.py:150] - Split completed. Train shape: (800, 30), Test shape: (200, 30)
+[2026-05-24 08:33:36] INFO [ml_pipeline:preprocessing.py:84] - Checking outliers for columns: ['Amount'] at 0.999 threshold.
+[2026-05-24 08:33:36] INFO [ml_pipeline:preprocessing.py:95] - Capping 1 extreme outlier(s) in 'Amount' at 0.999 percentile value: 11.00
+[2026-05-24 08:33:36] INFO [ml_pipeline:preprocessing.py:167] - Configuring preprocessor pipeline targeting scaling columns: ['Time', 'Amount']
+[2026-05-24 08:38:05] INFO [ml_pipeline:main.py:63] - =======================================================================
+[2026-05-24 08:38:05] INFO [ml_pipeline:main.py:64] - STARTING MODEL TRAINING STAGE
+[2026-05-24 08:38:05] INFO [ml_pipeline:main.py:65] - =======================================================================
+[2026-05-24 08:38:05] INFO [ml_pipeline:data_loader.py:77] - Initiating dataset ingestion from target path: data/raw/creditcard.csv
+[2026-05-24 08:38:05] WARNING [ml_pipeline:data_loader.py:80] - Dataset not found at target location: 'data/raw/creditcard.csv'
+[2026-05-24 08:38:05] INFO [ml_pipeline:data_loader.py:81] - GENERATING HIGH-FIDELITY SYNTHETIC DATASET FOR SEAMLESS DEMO RUN...
+[2026-05-24 08:38:07] INFO [ml_pipeline:data_loader.py:92] - Synthetic dataset of 15,000 samples successfully saved to: data/raw/creditcard.csv
+[2026-05-24 08:38:08] INFO [ml_pipeline:data_loader.py:100] - Dataset loaded successfully. Shape: 15000 rows, 31 columns.
+[2026-05-24 08:38:08] INFO [ml_pipeline:data_loader.py:118] - Target class distribution: Legitimate (0) = 14975, Fraudulent (1) = 25 (0.1667%)
+[2026-05-24 08:38:08] INFO [ml_pipeline:data_loader.py:128] - Dataset verified: No missing values detected.
+[2026-05-24 08:38:08] INFO [ml_pipeline:preprocessing.py:39] - Evaluating missing values across features...
+[2026-05-24 08:38:08] INFO [ml_pipeline:preprocessing.py:54] - No missing values detected. Skipping imputation.
+[2026-05-24 08:38:08] INFO [ml_pipeline:preprocessing.py:84] - Checking outliers for columns: ['Amount'] at 0.999 threshold.
+[2026-05-24 08:38:08] INFO [ml_pipeline:preprocessing.py:95] - Capping 15 extreme outlier(s) in 'Amount' at 0.999 percentile value: 620.86
+[2026-05-24 08:38:08] INFO [ml_pipeline:visualize.py:184] - Generating Pearson correlation matrix heatmap...
+[2026-05-24 08:38:11] INFO [ml_pipeline:visualize.py:205] - Correlation matrix plot saved to: visuals\correlation_matrix.png
+[2026-05-24 08:38:11] INFO [ml_pipeline:visualize.py:218] - Generating target class & amount distribution charts...
+[2026-05-24 08:38:11] INFO [matplotlib.category:category.py:224] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+[2026-05-24 08:38:11] INFO [matplotlib.category:category.py:224] - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+[2026-05-24 08:38:14] INFO [ml_pipeline:visualize.py:274] - Fraud distribution charts saved to: visuals\fraud_distribution.png
+[2026-05-24 08:38:14] INFO [ml_pipeline:preprocessing.py:135] - Executing train/test split (test_size=0.2, stratify=True)
+[2026-05-24 08:38:14] INFO [ml_pipeline:preprocessing.py:150] - Split completed. Train shape: (12000, 30), Test shape: (3000, 30)
+[2026-05-24 08:38:14] INFO [ml_pipeline:preprocessing.py:167] - Configuring preprocessor pipeline targeting scaling columns: ['Time', 'Amount']
+[2026-05-24 08:38:14] INFO [ml_pipeline:train.py:45] - Initializing and training Logistic Regression baseline model...
+[2026-05-24 08:38:14] INFO [ml_pipeline:train.py:65] - Logistic Regression baseline model training completed successfully.
+[2026-05-24 08:38:14] INFO [ml_pipeline:train.py:219] - Computing cross-validation scores (Folds: 5, Metric: f1)...
+[2026-05-24 08:38:37] INFO [ml_pipeline:train.py:232] - Cross-validation f1 scores across folds: [1.         0.66666667 1.         1.         1.        ]
+[2026-05-24 08:38:37] INFO [ml_pipeline:train.py:233] - Mean f1 score: 0.9333 (+/- 0.2667)
+[2026-05-24 08:38:37] INFO [ml_pipeline:utils.py:105] - Successfully serialized model pipeline to: models\logistic_regression_baseline\logistic_regression_baseline.joblib
+[2026-05-24 08:38:37] INFO [ml_pipeline:utils.py:118] - Successfully saved model metadata companion to: models\logistic_regression_baseline\logistic_regression_baseline_metadata.json
+[2026-05-24 08:38:37] INFO [ml_pipeline:train.py:101] - Initializing SMOTE & Random Forest champion training (quick_mode=True)...
+[2026-05-24 08:38:37] INFO [ml_pipeline:train.py:136] - Executing fast champion training with baseline hyperparameters...
+[2026-05-24 08:38:53] INFO [ml_pipeline:train.py:152] - Champion Random Forest model fast training complete.
+[2026-05-24 08:38:53] INFO [ml_pipeline:utils.py:105] - Successfully serialized model pipeline to: models\random_forest_champion\random_forest_champion.joblib
+[2026-05-24 08:38:53] INFO [ml_pipeline:utils.py:118] - Successfully saved model metadata companion to: models\random_forest_champion\random_forest_champion_metadata.json
+[2026-05-24 08:38:53] INFO [ml_pipeline:main.py:155] - =======================================================================
+[2026-05-24 08:38:53] INFO [ml_pipeline:main.py:156] - MODEL TRAINING COMPLETED SUCCESSFULY
+[2026-05-24 08:38:53] INFO [ml_pipeline:main.py:157] - =======================================================================
+[2026-05-24 08:41:25] INFO [ml_pipeline:main.py:174] - =======================================================================
+[2026-05-24 08:41:25] INFO [ml_pipeline:main.py:175] - STARTING MODEL EVALUATION STAGE
+[2026-05-24 08:41:25] INFO [ml_pipeline:main.py:176] - =======================================================================
+[2026-05-24 08:41:25] INFO [ml_pipeline:data_loader.py:77] - Initiating dataset ingestion from target path: data/raw/creditcard.csv
+[2026-05-24 08:41:25] INFO [ml_pipeline:data_loader.py:100] - Dataset loaded successfully. Shape: 15000 rows, 31 columns.
+[2026-05-24 08:41:25] INFO [ml_pipeline:data_loader.py:118] - Target class distribution: Legitimate (0) = 14975, Fraudulent (1) = 25 (0.1667%)
+[2026-05-24 08:41:25] INFO [ml_pipeline:data_loader.py:128] - Dataset verified: No missing values detected.
+[2026-05-24 08:41:25] INFO [ml_pipeline:preprocessing.py:39] - Evaluating missing values across features...
+[2026-05-24 08:41:25] INFO [ml_pipeline:preprocessing.py:54] - No missing values detected. Skipping imputation.
+[2026-05-24 08:41:25] INFO [ml_pipeline:preprocessing.py:84] - Checking outliers for columns: ['Amount'] at 0.999 threshold.
+[2026-05-24 08:41:25] INFO [ml_pipeline:preprocessing.py:95] - Capping 15 extreme outlier(s) in 'Amount' at 0.999 percentile value: 620.86
+[2026-05-24 08:41:25] INFO [ml_pipeline:preprocessing.py:135] - Executing train/test split (test_size=0.2, stratify=True)
+[2026-05-24 08:41:25] INFO [ml_pipeline:preprocessing.py:150] - Split completed. Train shape: (12000, 30), Test shape: (3000, 30)
+[2026-05-24 08:41:25] INFO [ml_pipeline:predict.py:31] - Initializing FraudPredictor with model binary: models\logistic_regression_baseline\logistic_regression_baseline.joblib
+[2026-05-24 08:41:25] INFO [ml_pipeline:utils.py:144] - Loaded serialized model pipeline successfully from: models\logistic_regression_baseline\logistic_regression_baseline.joblib
+[2026-05-24 08:41:25] INFO [ml_pipeline:evaluate.py:170] - Evaluating model pipeline 'logistic_regression_baseline' on test partition...
+[2026-05-24 08:41:25] INFO [ml_pipeline:evaluate.py:185] - Evaluation Metrics for logistic_regression_baseline:
+[2026-05-24 08:41:25] INFO [ml_pipeline:evaluate.py:187] -   Accuracy   : 0.9997
+[2026-05-24 08:41:25] INFO [ml_pipeline:evaluate.py:187] -   Precision  : 1.0000
+[2026-05-24 08:41:25] INFO [ml_pipeline:evaluate.py:187] -   Recall     : 0.8000
+[2026-05-24 08:41:25] INFO [ml_pipeline:evaluate.py:187] -   F1-Score   : 0.8889
+[2026-05-24 08:41:25] INFO [ml_pipeline:evaluate.py:187] -   MCC        : 0.8943
+[2026-05-24 08:41:25] INFO [ml_pipeline:evaluate.py:187] -   ROC-AUC    : 1.0000
+[2026-05-24 08:41:25] INFO [ml_pipeline:evaluate.py:187] -   PR-AUC     : 1.0000
+[2026-05-24 08:41:25] INFO [ml_pipeline:evaluate.py:190] - Confusion Matrix:
+TN: 2995 | FP: 0
+FN: 1 | TP: 4
+[2026-05-24 08:41:25] INFO [ml_pipeline:evaluate.py:193] - Classification Report:
+              precision    recall  f1-score   support
+
+           0     0.9997    1.0000    0.9998      2995
+           1     1.0000    0.8000    0.8889         5
+
+    accuracy                         0.9997      3000
+   macro avg     0.9998    0.9000    0.9444      3000
+weighted avg     0.9997    0.9997    0.9996      3000
+
+[2026-05-24 08:41:25] INFO [ml_pipeline:evaluate.py:213] - Serialized JSON report: reports\logistic_regression_baseline_report.json
+[2026-05-24 08:41:25] INFO [ml_pipeline:evaluate.py:141] - Markdown executive summary report written to: reports\logistic_regression_baseline_report.md
+[2026-05-24 08:41:25] INFO [ml_pipeline:visualize.py:42] - Generating confusion matrix plot for logistic_regression_baseline...
+[2026-05-24 08:41:26] INFO [ml_pipeline:visualize.py:66] - Confusion matrix plot saved to: visuals\logistic_regression_baseline_confusion_matrix.png
+[2026-05-24 08:41:26] INFO [ml_pipeline:visualize.py:86] - Generating ROC and PR evaluation curves for logistic_regression_baseline...
+[2026-05-24 08:41:27] INFO [ml_pipeline:visualize.py:123] - ROC & PR curves saved successfully to: visuals\logistic_regression_baseline_evaluation_curves.png
+[2026-05-24 08:41:27] INFO [ml_pipeline:predict.py:31] - Initializing FraudPredictor with model binary: models\random_forest_champion\random_forest_champion.joblib
+[2026-05-24 08:41:27] INFO [ml_pipeline:utils.py:144] - Loaded serialized model pipeline successfully from: models\random_forest_champion\random_forest_champion.joblib
+[2026-05-24 08:41:27] INFO [ml_pipeline:evaluate.py:170] - Evaluating model pipeline 'random_forest_champion' on test partition...
+[2026-05-24 08:41:27] INFO [ml_pipeline:evaluate.py:185] - Evaluation Metrics for random_forest_champion:
+[2026-05-24 08:41:27] INFO [ml_pipeline:evaluate.py:187] -   Accuracy   : 0.9987
+[2026-05-24 08:41:27] INFO [ml_pipeline:evaluate.py:187] -   Precision  : 1.0000
+[2026-05-24 08:41:27] INFO [ml_pipeline:evaluate.py:187] -   Recall     : 0.2000
+[2026-05-24 08:41:27] INFO [ml_pipeline:evaluate.py:187] -   F1-Score   : 0.3333
+[2026-05-24 08:41:27] INFO [ml_pipeline:evaluate.py:187] -   MCC        : 0.4469
+[2026-05-24 08:41:27] INFO [ml_pipeline:evaluate.py:187] -   ROC-AUC    : 0.9996
+[2026-05-24 08:41:27] INFO [ml_pipeline:evaluate.py:187] -   PR-AUC     : 0.8855
+[2026-05-24 08:41:27] INFO [ml_pipeline:evaluate.py:190] - Confusion Matrix:
+TN: 2995 | FP: 0
+FN: 4 | TP: 1
+[2026-05-24 08:41:27] INFO [ml_pipeline:evaluate.py:193] - Classification Report:
+              precision    recall  f1-score   support
+
+           0     0.9987    1.0000    0.9993      2995
+           1     1.0000    0.2000    0.3333         5
+
+    accuracy                         0.9987      3000
+   macro avg     0.9993    0.6000    0.6663      3000
+weighted avg     0.9987    0.9987    0.9982      3000
+
+[2026-05-24 08:41:27] INFO [ml_pipeline:evaluate.py:213] - Serialized JSON report: reports\random_forest_champion_report.json
+[2026-05-24 08:41:27] INFO [ml_pipeline:evaluate.py:141] - Markdown executive summary report written to: reports\random_forest_champion_report.md
+[2026-05-24 08:41:27] INFO [ml_pipeline:visualize.py:42] - Generating confusion matrix plot for random_forest_champion...
+[2026-05-24 08:41:28] INFO [ml_pipeline:visualize.py:66] - Confusion matrix plot saved to: visuals\random_forest_champion_confusion_matrix.png
+[2026-05-24 08:41:28] INFO [ml_pipeline:visualize.py:86] - Generating ROC and PR evaluation curves for random_forest_champion...
+[2026-05-24 08:41:29] INFO [ml_pipeline:visualize.py:123] - ROC & PR curves saved successfully to: visuals\random_forest_champion_evaluation_curves.png
+[2026-05-24 08:41:29] INFO [ml_pipeline:visualize.py:143] - Extracting feature importances for random_forest_champion...
+[2026-05-24 08:41:30] INFO [ml_pipeline:visualize.py:170] - Feature importance plot exported to: visuals\random_forest_champion_feature_importance.png
+[2026-05-24 08:41:30] INFO [ml_pipeline:main.py:250] - =======================================================================
+[2026-05-24 08:41:30] INFO [ml_pipeline:main.py:251] - METRIC RESUME PERFORMANCE COMPARISON
+[2026-05-24 08:41:30] INFO [ml_pipeline:main.py:252] - =======================================================================
+[2026-05-24 08:41:30] INFO [ml_pipeline:main.py:253] - Evaluation Metric         | Baseline (LR)   | Champion (RF)  
+[2026-05-24 08:41:30] INFO [ml_pipeline:main.py:254] - -----------------------------------------------------------------
+[2026-05-24 08:41:30] INFO [ml_pipeline:main.py:256] - Accuracy                  |          0.9997 |          0.9987
+[2026-05-24 08:41:30] INFO [ml_pipeline:main.py:256] - Precision                 |          1.0000 |          1.0000
+[2026-05-24 08:41:30] INFO [ml_pipeline:main.py:256] - Recall                    |          0.8000 |          0.2000
+[2026-05-24 08:41:30] INFO [ml_pipeline:main.py:256] - F1-Score                  |          0.8889 |          0.3333
+[2026-05-24 08:41:30] INFO [ml_pipeline:main.py:256] - MCC                       |          0.8943 |          0.4469
+[2026-05-24 08:41:30] INFO [ml_pipeline:main.py:256] - ROC-AUC                   |          1.0000 |          0.9996
+[2026-05-24 08:41:30] INFO [ml_pipeline:main.py:256] - PR-AUC                    |          1.0000 |          0.8855
+[2026-05-24 08:41:30] INFO [ml_pipeline:main.py:260] - =======================================================================
+[2026-05-24 08:42:30] INFO [ml_pipeline:main.py:277] - =======================================================================
+[2026-05-24 08:42:30] INFO [ml_pipeline:main.py:278] - STARTING LIVE INFERENCE TEST STAGE
+[2026-05-24 08:42:30] INFO [ml_pipeline:main.py:279] - =======================================================================
+[2026-05-24 08:42:30] INFO [ml_pipeline:predict.py:31] - Initializing FraudPredictor with model binary: models\random_forest_champion\random_forest_champion.joblib
+[2026-05-24 08:42:30] INFO [ml_pipeline:utils.py:144] - Loaded serialized model pipeline successfully from: models\random_forest_champion\random_forest_champion.joblib
+[2026-05-24 08:42:30] INFO [ml_pipeline:data_loader.py:77] - Initiating dataset ingestion from target path: data/raw/creditcard.csv
+[2026-05-24 08:42:30] INFO [ml_pipeline:data_loader.py:100] - Dataset loaded successfully. Shape: 15000 rows, 31 columns.
+[2026-05-24 08:42:30] INFO [ml_pipeline:data_loader.py:118] - Target class distribution: Legitimate (0) = 14975, Fraudulent (1) = 25 (0.1667%)
+[2026-05-24 08:42:30] INFO [ml_pipeline:data_loader.py:128] - Dataset verified: No missing values detected.
+[2026-05-24 08:42:30] INFO [ml_pipeline:predict.py:78] - Executing batch prediction on 5 transactions...
+[2026-05-24 08:42:31] INFO [ml_pipeline:main.py:300] - Batch Prediction Results Summary:
+[2026-05-24 08:42:31] INFO [ml_pipeline:main.py:302] - Tx #1 | Ground Truth: 0 | Prediction: 0 (Legitimate) | Confidence Score: 0.0000
+[2026-05-24 08:42:31] INFO [ml_pipeline:main.py:302] - Tx #2 | Ground Truth: 0 | Prediction: 0 (Legitimate) | Confidence Score: 0.0000
+[2026-05-24 08:42:31] INFO [ml_pipeline:main.py:302] - Tx #3 | Ground Truth: 0 | Prediction: 0 (Legitimate) | Confidence Score: 0.0000
+[2026-05-24 08:42:31] INFO [ml_pipeline:main.py:302] - Tx #4 | Ground Truth: 0 | Prediction: 0 (Legitimate) | Confidence Score: 0.0298
+[2026-05-24 08:42:31] INFO [ml_pipeline:main.py:302] - Tx #5 | Ground Truth: 0 | Prediction: 0 (Legitimate) | Confidence Score: 0.0000
+[2026-05-24 08:42:31] INFO [ml_pipeline:predict.py:78] - Executing batch prediction on 1 transactions...
+[2026-05-24 08:42:31] INFO [ml_pipeline:predict.py:127] - Single transaction inference successful. Decision: Legitimate (Fraud Prob: 0.0000)
+[2026-05-24 08:42:31] INFO [ml_pipeline:main.py:312] - Single Record Result details:
+[2026-05-24 08:42:31] INFO [ml_pipeline:main.py:313] - {'prediction_class': 0, 'prediction_label': 'Legitimate', 'fraud_probability': 0.0, 'legitimate_probability': 1.0}
