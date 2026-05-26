@@ -15,6 +15,7 @@ from src.utils import ensure_directories, save_model, setup_logger
 from src.data_loader import load_data
 from src.preprocessing import split_data, get_preprocessor, impute_missing_values, handle_outliers
 from src.train import train_baseline, train_champion, evaluate_with_cross_val_score
+from src.xgboost_model import train_xgboost
 from src.evaluate import evaluate_pipeline
 from src.predict import FraudPredictor
 from src.visualize import (
@@ -51,12 +52,18 @@ def cli(ctx: click.Context, config_path: str) -> None:
 
 @cli.command()
 @click.option(
-    "--quick-mode/--no-quick-mode", 
-    default=True, 
+    "--quick-mode/--no-quick-mode",
+    default=True,
     help="If quick-mode, trains RF directly without randomized hyperparameter optimization."
 )
+@click.option(
+    "--model-type",
+    type=click.Choice(["random_forest", "xgboost", "both"], case_sensitive=False),
+    default="both",
+    help="Which champion model(s) to train: random_forest, xgboost, or both."
+)
 @click.pass_context
-def train(ctx: click.Context, quick_mode: bool) -> None:
+def train(ctx: click.Context, quick_mode: bool, model_type: str) -> None:
     """Trains and serializes both baseline and champion models."""
     config: PipelineConfig = ctx.obj["config"]
     
