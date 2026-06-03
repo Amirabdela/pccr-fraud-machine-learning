@@ -349,5 +349,62 @@ def serve(ctx: click.Context, port: int, host: str) -> None:
     uvicorn.run("app.main_api:app", host=host, port=port, reload=True)
 
 
+@cli.command()
+@click.option("--max-samples", default=500, help="Max samples to use for SHAP computation.")
+@click.option("--sample-index", default=0, help="Sample index for waterfall plot explanation.")
+@click.pass_context
+def explain(ctx: click.Context, max_samples: int, sample_index: int) -> None:
+    """Generates SHAP feature importance plots and a Markdown explainability report."""
+    config: PipelineConfig = ctx.obj["config"]
+
+    logger.info("=======================================================================")
+    logger.info("STARTING MODEL EXPLAINABILITY STAGE")
+    logger.info("=======================================================================")
+
+    try:
+        from src.explain import compute_shap_values, plot_shap_summary, plot_shap_waterfall, generate_shap_report
+
+        champion_path = os.path.join(
+            config.directories.models_dir,
+            config.models.champion.name,
+            f"{config.models.champion.name}.joblib"
+        )
+        if not os.path.exists(champion_path):
+            raise click.ClickException(f"Champion model not found at {champion_path}. Run 'train' first.")
+
+        df = load_data(config.data_path)
+        df = impute_missing_values(df)
+        _, X_test, _, _ = split_data(
+            df,
+            target_column=config.data.target_column,
+            test_size=config.data.test_size,
+            random_state=config.project.seed,
+            stratify=config.data.stratify
+        )
+
+        champion_pipeline = FraudPredictor(champion_path).model
+        shap_values, explainer, X_transformed = compute_shap_values(
+            champion_pipeline, X_test, max_samples=max_samples
+        )
+
+        feature_names = list(X_test.columns)
+        plot_shap_summary(shap_values, X_transformed, feature_names,
+                          output_dir=config.directories.visuals_dir,
+                          model_name=config.models.champion.name)
+        plot_shap_waterfall(shap_values, X_transformed, sample_index=sample_index,
+                            feature_names=feature_names,
+                            output_dir=config.directories.visuals_dir,
+                            model_name=config.models.champion.name)
+        generate_shap_report(shap_values, X_transformed, feature_names,
+                             output_dir=config.directories.reports_dir,
+                             model_name=config.models.champion.name)
+
+        click.secho("Explainability plots and report generated successfully!", fg="green")
+
+    except Exception as e:
+        logger.critical(f"Explainability stage failed: {e}")
+        sys.exit(3)
+
+
 if __name__ == "__main__":
     cli()
